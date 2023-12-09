@@ -19,7 +19,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class TransportadorApplication {
 
   public static void main(String[] args) {
-    SpringApplication.run(FornecedorApplication.class, args);
+    SpringApplication.run(TransportadorApplication.class, args);
   }
 
   @Bean

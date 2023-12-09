@@ -1,10 +1,10 @@
-create schema if not exists fornecedor;
+create schema if not exists transportador;
 
-create table if not exists fornecedor.info(
+create table if not exists transportador.entrega(
     id    bigserial primary key,
-    nome  varchar(100) not null,
-    estado varchar(100) not null,
-    endereco varchar(100) not null
+    pedidoId    bigserial not null,
+    dataParaBusca timestamp not null,
+    previsaoParaEntrega timestamp not null,
+    enderecoOrigem  varchar(100) not null,
+    enderecoOrigem  varchar(100) not null
 );
-
-INSERT INTO fornecedor.info(nome, estado, endereco) VALUES('Casa pai', 'RJ', 'rua tomas de aquino');
