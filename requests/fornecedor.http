@@ -1,0 +1,4 @@
+### Consultando informação
+GET http://localhost:8081/api/v1/info/RJ
+
+>> {{$projectRoot}}/requests/responses/fornecedor-response-{{$isoTimestamp}}.json

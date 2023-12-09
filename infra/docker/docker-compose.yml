@@ -1,0 +1,44 @@
+version: "3.9"
+
+services:
+  fornecedor-api:
+    env_file:
+      - .env
+    container_name: fornecedor-api
+    build:
+      context: ../../
+      dockerfile: infra/docker/Dockerfile
+    image: fornecedor-api
+    ports:
+      - "8081:8081"
+      - "8001:8001"
+    environment:
+      DB_HOST: "${DB_FORNECEDOR_HOST}"
+      DB_USER: "${DB_FORNECEDOR_USER}"
+      DB_PASSWORD: "${DB_FORNECEDOR_PASSWORD}"
+      DB: "${DB_FORNECEDOR}"
+      DB_MIGRATION: "${DB_FORNECEDOR_MIGRATION}"
+#    depends_on:
+#      fornecedor-db:
+#        condition: service_healthy
+#    entrypoint: ["java","-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8001", "-jar", "app.jar"]
+
+#  fornecedor-db:
+#    image: postgres:14-alpine
+#    container_name: fornecedor-db
+#    ports:
+#      - "5432:5432"
+#    environment:
+#      POSTGRES_USER: postgres
+#      POSTGRES_DB: fornecedor
+#      POSTGRES_PASSWORD: postgres
+#    volumes:
+#      - fornecedor-data:/var/lib/postgresql/data
+#    healthcheck:
+#      test: [ "CMD-SHELL", "pg_isready", "-d", "db_prod" ]
+#      interval: 30s
+#      timeout: 60s
+#      retries: 5
+#      start_period: 80s
+#volumes:
+#  fornecedor-data:

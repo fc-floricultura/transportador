@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: transportador
+    profiles:
+      active: default
+  cloud:
+    config:
+      uri: ${CONFIG_SERVER_API}
+      fail-fast: true
+      retry:
+        initial-interval: 10000
+        max-attempts: 6
+        max-interval: 20000
+        multiplier: 1.1
+
+
+logging:
+  level:
+    ROOT: INFO
