@@ -11,11 +11,8 @@ import lombok.ToString;
 public class EntregaDTO {
 
 	private Long pedidoId;
-
 	private LocalDate dataParaEntrega;
-
 	private String enderecoOrigem;
-
 	private String enderecoDestino;
 
 }
