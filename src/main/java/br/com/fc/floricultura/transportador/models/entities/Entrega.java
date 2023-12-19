@@ -2,10 +2,7 @@ package br.com.fc.floricultura.transportador.models.entities;
 
 import java.time.LocalDate;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,13 +16,9 @@ public class Entrega {
 	private Long id;
 
 	private Long pedidoId;
-
 	private LocalDate dataParaBusca;
-
 	private LocalDate previsaoParaEntrega;
-
 	private String enderecoOrigem;
-
 	private String enderecoDestino;
 
 }

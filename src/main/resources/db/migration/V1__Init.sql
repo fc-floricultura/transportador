@@ -2,9 +2,9 @@ create schema if not exists transportador;
 
 create table if not exists transportador.entrega(
     id    bigserial primary key,
-    pedidoId    bigserial not null,
-    dataParaBusca timestamp not null,
-    previsaoParaEntrega timestamp not null,
-    enderecoOrigem  varchar(100) not null,
-    enderecoOrigem  varchar(100) not null
+    pedido_id             BIGINT,
+    data_para_busca       date,
+    previsao_para_entrega date,
+    endereco_origem       VARCHAR(255),
+    endereco_destino      VARCHAR(255)
 );
